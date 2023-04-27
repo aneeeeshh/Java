@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class prime2ton {
+	public static boolean isprime(int n) {
+		int d = 2;
+		while(d < n) {
+			if (n%d == 0) {
+				return false;
+			}
+			d++;
+		}
+		return true;
+	}
+	             
+	
+	public static void printprimes(int n) {
+		for(int i = 1; i<=n ; i++) {
+			
+				boolean ans = isprime(i);
+				if(ans) {
+					System.out.println(i);
+				}
+				/* here we are calling one function into another function
+				 * this means that we can call any funtion into any function by just calling it by its function name
+				 */
+		}
+	}
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int b = scan.nextInt();
+		printprimes(b);
+		
+		}
+	}
+	

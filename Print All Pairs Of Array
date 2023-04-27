@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Print_All_Pairs {
+	
+	public static int[] takeinput() {
+		Scanner scan = new Scanner(System.in);
+		int size = scan.nextInt();
+		int input[] = new int[size];
+		for(int i = 0; i<size; i++) {
+			input[i] = scan.nextInt();
+ 		}
+		return input;
+	}
+	
+	public static void print(int input[]) {
+		for(int i = 0; i<input.length; i++) {
+			System.out.print(input[i] + " ");
+			
+		}System.out.println();
+	}
+	public static void findallpairs(int input[]) {
+		
+		int n = input.length;
+		for (int i = 0; i<n-1; i++) {
+			
+			for (int j = i+1; j<n; j++) {
+				System.out.println("(" + input[i] + "," +  input[j] + ")"  );
+				
+			}
+			
+		}
+	}
+
+	public static void main(String[] args) {
+		int arr[] = takeinput();
+		print(arr);
+		findallpairs(arr);
+		
+	
+	}
+
+}

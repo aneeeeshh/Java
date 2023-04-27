@@ -1,0 +1,33 @@
+public class Binary_Search {
+	
+	
+	 public static int binarySearch(int input[], int elem) {
+			int start = 0;
+			int end = input.length - 1;
+			while (start <= end) {
+				int mid = (start + end)/2;
+				if (elem == input[mid]) {
+					return mid;
+				}
+				else if(elem < input[mid]) {
+					end = mid - 1;
+				}
+				else {
+					start = mid + 1;
+				}
+				
+			}return -1;
+			
+		}
+
+		public static void main(String[] args) {
+			int input[] = {85,96,105,110,111,150,158};
+			int index = binarySearch(input, 150);
+			System.out.println(index);
+
+		}
+
+	}
+    /* This Program Searches By Binary Search 
+    But The Array And Element Is Given In The Code Itself  */
+    

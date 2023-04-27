@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class prime_using_function {
+
+	public static boolean isprime(int n ) {
+		int d= 2;
+		while (d < n) {
+			if (n%d == 0) {
+			return false;
+	   	 }d++;
+	   }return true;
+	}
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int i = scan.nextInt();
+		
+		boolean ans = isprime(i);
+		System.out.println(ans);
+	
+
+	}
+
+}
