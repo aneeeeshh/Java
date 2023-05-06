@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Merge_two_arrays {
+	
+	
+	public static int[] takeinput() {
+		System.out.println("Please Enter The Size Of Array ");
+		Scanner scan = new Scanner(System.in);
+		int size = scan.nextInt();
+		int input[] = new int[size];
+		System.out.println("Enter The Sorted Array");
+		for (int i = 0; i<input.length; i++) {
+			input[i] = scan.nextInt();
+			
+		}
+		return input;
+	}
+	
+	public static int[] merge(int arr1[], int arr2[]) {
+		int i = 0;
+		int j = 0;
+		int k = 0;
+		
+		int arrf[] = new int[arr1.length + arr2.length];
+		
+		while (i < arr1.length && j < arr2.length) {
+			if (arr1[i] < arr2[j]) {
+				arrf[k] = arr1[i];
+				k++;
+				i++;
+			}else {
+				arrf[k] = arr2[j];
+				j++;
+				k++;
+			}
+		}
+		while (i < arr1.length) {
+			arrf[k] = arr1[i];
+			k++;
+			i++;
+		}
+		while (j < arr2.length) {
+			arrf[k] = arr2[j];
+			j++;
+			k++;		
+	}
+		return arrf;
+  }
+	public static void main(String[] args) {
+		int arr1[] = takeinput();
+		int arr2[] = takeinput();
+		
+
+		int arrf[] = merge(arr1,arr2);
+		for(int i = 0; i<arrf.length; i++) {
+			System.out.print(arrf[i] + " ");
+		}
+	}
+}
