@@ -1,0 +1,68 @@
+// write a program to take array size from the user and create an array of that size.
+// then take the elements of the array from the user.
+// then sort the array and print the array.
+// then take an element from the user and search it in the array.
+// if the given element exists then tell the index of the elements else print element not found
+
+
+import java.util.Scanner;
+public class Sort_and_Search {
+
+		
+		public static int[] takeinput() {
+			System.out.println("Enter The Size Of The Array ");
+			Scanner scan = new Scanner(System.in);
+			int size = scan.nextInt();
+			System.out.println("Enter The Elements Of The Array ");
+			int input[] = new int[size];
+			for (int i = 0; i< input.length; i++) {
+				input[i] = scan.nextInt();
+			}
+			return input;
+		}
+		
+		public static void print(int input[]) {
+			for(int i =0; i<input.length; i++) {
+				System.out.print(input[i] + " " );
+			}System.out.println();
+		}
+		public static void insertionsort(int input[]) {
+			for(int i = 1; i<input.length; i++) {
+				int j = i-1;
+				int temp = input[i];
+				while(j>=0 && input[j] > temp) {
+					input[j+1] = input[j];
+					j--;
+				}
+				input[j+1] = temp;
+			}	
+		}
+		public static int linearSearch(int input[], int elem) {
+			int start = 0;
+			int end = input.length ;
+			
+			for (int i = 0; i< end; i++) {
+				if (input[i] == elem) {
+					System.out.println(i + " index");
+					return 1;
+				}
+			}return -1;
+		}
+		public static void main(String[] args) {
+			int arr[] = takeinput();	
+			System.out.println("The Given Array Is ");
+			print(arr);
+			insertionsort(arr);
+			System.out.println("The Sorted Array Is ");
+			for (int i = 0; i<arr.length; i++) {
+				System.out.print(arr[i] + " ");
+
+			}System.out.println();
+			System.out.println("Enter The Number To Be Searched ");
+			Scanner scan = new Scanner(System.in);
+			int elem = scan.nextInt();
+			
+			System.out.println("The Element Lies On ");
+			linearSearch(arr , elem);
+		}
+	}
